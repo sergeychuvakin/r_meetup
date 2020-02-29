@@ -1,0 +1,118 @@
+\documentclass[a4paper,12pt]{article} % добавить leqno в [] для нумерации слева
+
+%%% Работа с русским языком
+\usepackage{cmap} % поиск в PDF
+\usepackage{mathtext} % русские буквы в формулах
+\usepackage[T2A]{fontenc} % кодировка
+\usepackage[utf8]{inputenc} % кодировка исходного текста
+\usepackage[english,russian]{babel} % локализация и переносы
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ —- число, $0, 2$ —- перечисление
+
+
+%% Шрифты
+\usepackage{euscript} % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Заголовок
+\author{Сергей Чувакин }
+\title{\LaTeX}
+\date{\today}
+
+\begin{document} % конец преамбулы, начало документа
+	\maketitle  % быстро и дешево, красивый заголовок
+	%\vspace{10cm}
+Какой-то текст, просто текст
+
+\section*{Заголовок} 
+
+\subsection{Подзаголовок}
+
+\subsubsection{Под-подзаголовок}
+	
+% \subsubsubsection{под-под-подзаголовок} % дальше уже нельзя 
+
+
+\section{Математика}
+
+есть два вида формул сторочные и выносные
+строчные: здесь какой то текст $x^2 = 5$ дальше текст 
+
+
+выносные: 
+
+текст текст $$\frac{x}{x^3} = 10$$
+
+\subsection{стандартные функции}
+
+$\sin x = 5$
+$$\ln x = 56\\$$
+
+\subsection{symbols}
+$$2\times2 \ne 5$$
+$2\cdot2$
+$A\cap B$, $A\cup B$
+
+\textbf{\Huge{miktex}}
+
+\emph{ffffff}
+
+{\em   ggggg}
+
+\subsection{диакретические знаки}
+
+\[\bar x=8\]
+\[\tilde{axb} = 9\]
+\[\overline{axb} = 9\]
+\[\widetilde{axb} = 9\]
+\subsection{буквы других алфавитов}
+$\alpha,\tg$ 
+$A, \tg$ 
+
+\section{формулы в несколько строк} 
+\subsection{очень длинные формулы}
+
+\begin{multline}
+1+2+3+5+6+7+\dots+\\+50+51+52+53+54+55+\dots+\\+70+71+72+73+74+75+\dots+\\+95+96+97+98+99+100  =  5050 \tag{S}\label{SUM}
+\end{multline}
+
+\subsection{несколько формул}
+
+
+\begin{align} \label{33}
+2\times 2 &= 4 &6\times 8 &= 48 & 2\times 2 = 4\\ 
+3\times 3  &=9 &5\times 5 &= 25 & 2\times 2444 = 4\\
+10 \times 666 &= 6660 &\frac {3}{2} &= 1.5 & 211\times 2 = 4
+\end{align}
+
+\begin{equation}\label{22}
+\begin{aligned}
+2\times 2 &= 4 &6\times 8 &= 48 & 2\times 2 = 4\\
+3\times 3  &=9 &5\times 5 &= 25 & 2\times 2444 = 4\\
+10 \times 666 &= 6660 &\frac {3}{2} &= 1.5 & 211\times 2 = 4	
+\end{aligned}
+\end{equation}
+здесь последнее уравнение \% \eqref{22}, а здесь предпоследнее \eqref{33} до этой строчки 
+
+\subsection{система уравнений}
+\[\left\{
+\begin{aligned}
+2\times 2 &= 4 &6\times 8 &= 48 & 2\times 2 = 4\\
+3\times 3  &=9 &5\times 5 &= 25 & 2\times 2444 = 4\\
+10 \times 666 &= 6660 &\frac {3}{2} &= 1.5 & 211\times 2 = 4	
+\end{aligned}\right.
+\]
+
+\tableofcontents
+
+
+\end{document}

@@ -1,0 +1,130 @@
+\documentclass[t]{beamer}  % [t], [c], или [b] --- вертикальное выравнивание на слайдах (верх, центр, низ), [russian]
+%\documentclass[aspectratio=169]{beamer} % Соотношение сторон
+%\pdfmapfile{+sansmathaccent.map}
+\usetheme{Berkeley} % Тема оформления
+%\usetheme{Bergen}
+%\usetheme{Szeged}
+%\usetheme{Amsterdam}
+\usecolortheme{beaver} % Цветовая схема
+%\useinnertheme{circles}
+%\useinnertheme{rectangles}
+
+%\usetheme{HSE}
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+%% Beamer по-русски
+\newtheorem{rtheorem}{Теорема}
+\newtheorem{rproof}{Доказательство}
+\newtheorem{rexample}{Пример}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+%%% Другие пакеты
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+\usepackage{soul} % Модификаторы начертания
+\usepackage{csquotes} % Еще инструменты для ссылок
+%\usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+\usepackage{multicol} % Несколько колонок
+
+%%% Картинки
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\title{5.1. Презентации: пакет beamer}
+\subtitle{\LaTeX}
+\author{Чувакин Сергей}
+\date{\today}
+%\institute[Высшая школа экономики]{Национальный исследовательский университет \\ <<Высшая школа экономики>>}
+
+
+\begin{document}
+
+\frame[plain]{\titlepage}	% Титульный слайд
+
+\section{Поочередное появление объектов}
+\subsection{Команда pause}
+
+\begin{frame} \label{lab}
+	\frametitle{\insertsection} 
+	\framesubtitle{\insertsubsection}
+	\begin{itemize}
+		\item beamer ---  это \alert{удобный} \textbf{пакет} для создания презентаций.
+		\item Это наш первый слайд \pause
+		\item Вот полное руководство по beamer:  \href{http://ctan.uni-altai.ru/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{http://ctan.uni-altai.ru/macros/latex/contrib/beamer/doc/beameruserguide.pdf} \pause
+		\item Паузу можно поставить в любом \pause месте.
+		\item Для печати презентации есть режим handout.
+	\end{itemize}
+\end{frame}
+
+
+\subsection{На слайде}
+
+\begin{frame}
+	\frametitle{\insertsection}
+	\framesubtitle{\insertsubsection}
+	\begin{block}{Первый блок}
+		Текст первого блока
+	\end{block}
+	\begin{block}{Второй блок}
+		Текст второго блока
+	\end{block}
+	\begin{block}{Кнопка}
+		\hyperlink{lab}{\beamerbutton{Кнопка со ссылкой}} 
+	\end{block}
+\end{frame}
+
+\section{Формулы}
+
+\begin{frame}
+	\frametitle{\insertsection}
+	\begin{itemize}
+		\item $\displaystyle\int_0^1 x=1/2$  
+		\item $2\times 2=4$, $2^2=4$ 
+		\item $\displaystyle\frac{5}{\alert{6}}=\frac{1}{1+\frac{1}{5}}$ % \displaystyle - сделать так, как будто это выключная формула, то есть чтобы использовались нормальный шрифт
+	\end{itemize}
+\end{frame}
+
+\section{Большой текст}
+
+\begin{frame}[shrink=7]\label{lab}  % Опцию shrink лучше не использовать, на сколько процентов уможно ужать текст
+	\frametitle{\insertsection}
+	\textsl{Чуден Днепр при тихой погоде, когда вольно и плавно мчит сквозь леса и горы полные воды свои. Ни зашелохнет; ни прогремит. Глядишь, и не знаешь, идет или не идет его величавая ширина, и чудится, будто весь вылит он из стекла, и будто голубая зеркальная дорога, без меры в ширину, без конца в длину, реет и вьется по зеленому миру. Любо тогда и жаркому солнцу оглядеться с вышины и погрузить лучи в холод стеклянных вод и прибережным лесам ярко отсветиться в водах. Зеленокудрые! они толпятся вместе с полевыми цветами к водам и, наклонившись, глядят в них и не наглядятся, и не налюбуются светлым  своим зраком, и усмехаются к нему, и приветствуют его, кивая ветвями. В середину же Днепра они не смеют глянуть: никто, кроме солнца и голубого неба, не глядит в него. Редкая птица долетит до середины Днепра. Пышный! ему нет равной реки в мире. Чуден Днепр и при теплой летней ночи, когда все засыпает --- и человек, и зверь, и птица; а бог один величаво озирает небо и землю и величаво сотрясает ризу.}
+	
+	\hfill{\textit{Н. В. Гоголь}}
+\end{frame}
+
+
+
+\end{document}
