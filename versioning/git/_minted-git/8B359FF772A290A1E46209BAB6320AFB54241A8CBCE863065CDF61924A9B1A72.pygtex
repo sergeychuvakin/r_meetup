@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+git branch \PYG{c+c1}{\PYGZsh{} список}
+git branch \PYGZlt{}name\PYGZgt{} \PYG{c+c1}{\PYGZsh{} создание}
+git branch \PYGZhy{}d \PYGZlt{}name\PYGZgt{} \PYG{c+c1}{\PYGZsh{} удаление}
+git checkout \PYGZlt{}name\PYGZgt{} \PYG{c+c1}{\PYGZsh{} переключится}
+git push \PYGZhy{}u origin \PYGZlt{}branch\PYGZgt{} \PYG{c+c1}{\PYGZsh{} послать на сервер}
+git fetch \PYG{c+c1}{\PYGZsh{} стянуть новые ветки с сервера}
+git merge \PYGZlt{}branch\PYGZgt{} \PYG{c+c1}{\PYGZsh{} соеденить ветки}
+\end{Verbatim}

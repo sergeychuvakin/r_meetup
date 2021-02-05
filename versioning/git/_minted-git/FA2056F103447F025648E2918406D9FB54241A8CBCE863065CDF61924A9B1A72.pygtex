@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+git reset \PYGZlt{}commit hash\PYGZgt{}
+\end{Verbatim}

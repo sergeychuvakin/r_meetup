@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		touch .gitignore
+		\PYG{n+nb}{echo} my/data/path \PYGZgt{}\PYGZgt{} .gitognore
+\end{Verbatim}

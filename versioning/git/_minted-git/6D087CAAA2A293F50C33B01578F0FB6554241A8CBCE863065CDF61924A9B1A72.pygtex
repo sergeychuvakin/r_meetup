@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+git log
+git status
+git diff \PYGZlt{}commit hash\PYGZgt{} \PYG{c+c1}{\PYGZsh{} здесь можно посмотреть}
+\PYG{c+c1}{\PYGZsh{} изменения внесенные коммитом}
+\end{Verbatim}

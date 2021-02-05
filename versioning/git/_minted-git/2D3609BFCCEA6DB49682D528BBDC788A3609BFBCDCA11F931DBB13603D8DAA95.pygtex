@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		
+			git init \PYG{c+c1}{\PYGZsh{} начало}
+			git log \PYG{c+c1}{\PYGZsh{} история}
+			git status \PYG{c+c1}{\PYGZsh{} статус!}
+\end{Verbatim}

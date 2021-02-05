@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+git add my\PYGZus{}script.R \PYG{c+c1}{\PYGZsh{} или просто git add .}
+git commit \PYGZhy{}m \PYG{l+s+s1}{\PYGZsq{}initial commit\PYGZsq{}} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Сообщение обязательно!}
+\end{Verbatim}
